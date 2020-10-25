@@ -1,0 +1,25 @@
+<div id="productView">
+    <div class="container">
+        <h3 class="text-center" translate>Product OverView</h3>
+        <div class="row" *ngIf="getProditem;else Noitem">
+            <div class="col-md-6">
+                <img class="img-fluid" src="../../../../assets/imgs/TopProduct/{{getProditem.image}}" alt="image">
+            </div>
+            <div class="col-md-6">
+                <div class="productDetails">
+                    <h4>{{getProditem.title | translate}}</h4>
+                    <span>{{getProditem.price | currency}}</span>
+                    <h4>{{getProditem.brand}}</h4>
+                    <p>{{getProditem.description |translate}}</p>
+                </div>
+            </div>
+        </div>
+        <ng-template class="noitem" #Noitem>
+            <p translate>click On Item Detail to get data</p>
+            <a routerLink='' class="btn d-block continueShopping" translate> <i class="fas fa-angle-left"
+                    [ngClass]="{'fa-angle-left': translate.currentLang == 'en' , 'fa-angle-right':translate.currentLang=='ar'}"></i>
+                Continue
+                Shopping</a>
+        </ng-template>
+    </div>
+</div>

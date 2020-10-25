@@ -1,0 +1,32 @@
+#logincontent {
+  width: 50%;
+  padding-top: 40px;
+}
+#loginForm {
+  display: block;
+  margin: 10px 0;
+}
+
+#loginForm input {
+  margin: 15px auto;
+  width: 90%;
+}
+#loginForm ul {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 13px;
+  width: 90%;
+  margin: 0 auto;
+}
+#loginForm ul li {
+  flex-grow: 1;
+}
+#loginForm button {
+  margin-top: 30px;
+}
+
+@media (max-width: 425px) {
+  #logincontent {
+    width: 100%;
+  }
+}

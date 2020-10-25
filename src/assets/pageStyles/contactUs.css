@@ -1,0 +1,72 @@
+.address {
+  display: flex;
+  flex-wrap: wrap;
+  background: #fff;
+  margin: 10px;
+  padding: 20px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0px 7px 10px 2px #c3c1c1;
+  align-items: center;
+}
+.address img {
+  margin-right: 26px;
+}
+.add-content h3 {
+  color: #4c4c4c;
+  font-size: 18px;
+}
+.add-content span {
+  color: #555;
+  font-size: 15px;
+}
+
+#contactContent {
+  background: #fff;
+  margin: 10px;
+  padding: 20px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0px 7px 10px 2px #c3c1c1;
+}
+#contactContent form {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#contactContent form input {
+  width: 40%;
+  margin: 10px;
+  flex-grow: 1;
+  background: #f3f7f8;
+  border: 0;
+  outline: 0;
+  box-shadow: 2px 3px 6px 2px #ebecec inset;
+  border-radius: 15px;
+}
+#contactContent form textarea {
+  margin: 10px;
+  background: #f3f7f8;
+  border: 0;
+  outline: 0;
+  box-shadow: 2px 3px 6px 2px #ebecec inset;
+  border-radius: 15px;
+}
+#contactContent form button {
+  margin: 10px auto;
+  width: 50%;
+  background: #fc381a;
+  color: #fff;
+  border-radius: 20px;
+}
+#contactContent form button:hover,
+#contactContent form button:focus {
+  background: #000;
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  #contactContent form button {
+    width: auto;
+  }
+}

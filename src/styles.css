@@ -1,0 +1,11 @@
+/* You can add global styles to this file, and also import other style files */
+@import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+@import "../node_modules/@fortawesome/fontawesome-free/css/all.min.css";
+@import "./assets/pageStyles/style.css";
+@import "./assets/pageStyles/signUp.css";
+@import "./assets/pageStyles/about.css";
+@import "./assets/pageStyles/shopCart.css";
+@import "./assets/pageStyles/LikesPage.css";
+@import "./assets/pageStyles/contactUs.css";
+@import "./assets/pageStyles/logIn.css";
+@import "./assets/pageStyles/Terms.css";

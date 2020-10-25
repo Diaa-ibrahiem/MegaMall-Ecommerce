@@ -1,0 +1,54 @@
+#notFound {
+  background-image: url(../../../../assets/imgs/NotFound/background.jpg);
+  background-size: cover;
+  width: 100%;
+  overflow: hidden;
+}
+#notFound .container {
+  justify-content: center;
+  align-items: center;
+}
+#notFound img {
+  width: 40%;
+}
+.notFounddata {
+  color: #fff;
+  padding: 15px;
+}
+.notFounddata h1 {
+  font-size: 240px;
+  text-transform: uppercase;
+  text-align: center;
+}
+.notFounddata p {
+  font-size: 20px;
+}
+.notFounddata a {
+  background: #fff;
+  color: #000;
+  text-decoration: none;
+  font-size: 14px;
+  width: auto;
+  transition: all 0.3s ease-in-out;
+  display: block;
+  width: 50%;
+  margin: 0 auto;
+}
+.notFounddata a:hover {
+  background: #000;
+  color: #fff;
+}
+
+@media (max-width: 425px) {
+  .notFounddata h1 {
+    font-size: 50px;
+  }
+  .notFounddata p {
+    font-size: 10px;
+  }
+  .notFounddata a {
+    font-size: 11px;
+    display: block;
+    width: auto;
+  }
+}

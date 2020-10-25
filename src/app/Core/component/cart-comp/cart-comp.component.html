@@ -1,0 +1,80 @@
+<div id="ShopCart" class="my-5 signUp">
+    <div class="container">
+        <h1 class="text-center" translate>Shop Cart</h1>
+        <nav aria-label="Page breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item active" translate aria-current="page">Home</li>
+                <li class="breadcrumb-item" translate>Shop Cart</li>
+            </ol>
+        </nav>
+        <section id="CartSection" *ngIf="product.length > 0; else NoContentBlock ">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="cartItems">
+                        <h3 class="text-center" translate>Cart Items</h3>
+                        <ul class="d-flex hidding">
+                            <li><span translate>Product</span></li>
+                            <li><span translate>Price</span></li>
+                            <li><span translate>Quantity</span></li>
+                            <li><span translate>Total Price</span></li>
+                            <li><span translate>Delete</span></li>
+                        </ul>
+                        <ul class='items list-unstyled' *ngFor="let item of product;let i = index">
+                            <li class="d-flex py-4 row">
+                                <div class="itemImgName d-block col">
+                                    <img class="img-fluid" src='./assets/imgs/TopProduct/{{item.product.image}}' alt="">
+                                    <h5> {{item.product.title |translate}} </h5>
+                                </div>
+                                <div class="price col">
+                                    <span>{{item.product.price |currency}}</span>
+                                </div>
+                                <div class="PlusMinus col">
+                                    <app-change-quantitycomp [Quantity]='item.quantity'
+                                        (QuantityChange)='changeQuantity(item,$event)'></app-change-quantitycomp>
+                                </div>
+                                <div class="total col">
+                                    <span> {{item.product.price*item.quantity |currency}} </span>
+                                </div>
+                                <div class="Delete col">
+                                    <a (click)='DeleteCart(i)'><i class="fas fa-trash-alt"></i></a>
+                                </div>
+                            </li>
+                        </ul>
+                        <a routerLink='' class="btn d-block continueShopping" translate> <i class="fas "
+                                [ngClass]="{'fa-angle-left':translate.currentLang == 'en' ,'fa-angle-right':translate.currentLang == 'ar'}"></i>
+                            Continue Shopping</a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <aside>
+                        <div class="allValues">
+                            <h3 translate>Summary</h3>
+                            <div class="SubTotal">
+                                <span translate>Subtotal</span>
+                                <span>{{TotalPrice |currency}}</span>
+                            </div>
+                            <div class="Shipping">
+                                <span translate>Shipping</span>
+                                <span> {{shipping  | currency}} </span>
+                            </div>
+                            <div class="Total">
+                                <span translate>Total</span>
+                                <span> {{TotalPrice + shipping |currency}} </span>
+                            </div>
+                            <a routerLink='/' class="btn continueShopping d-block" translate> CheckOut <i class="fas "
+                                    [ngClass]="{'fa-angle-left':translate.currentLang == 'ar' ,'fa-angle-right':translate.currentLang == 'en'}"></i></a>
+                        </div>
+                    </aside>
+                </div>
+
+            </div>
+        </section>
+        <ng-template #NoContentBlock>
+            <h4 translate class="text-center">You have no items in your shopping cart.</h4>
+            <a routerLink='' class="btn d-block continueShopping" translate> <i class="fas fa-angle-left"
+                    [ngClass]="{'fa-angle-left': translate.currentLang == 'en' , 'fa-angle-right':translate.currentLang=='ar'}"></i>
+                Continue
+                Shopping</a>
+        </ng-template>
+    </div>
+</div>

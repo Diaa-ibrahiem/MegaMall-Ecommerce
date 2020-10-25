@@ -1,0 +1,41 @@
+<div id="ShopCart" class="my-5 signUp">
+    <div class="container">
+        <h1 class="text-center" translate>Likes</h1>
+        <nav aria-label="Page breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item active" aria-current="page" translate>Home</li>
+                <li class="breadcrumb-item" translate>Likes</li>
+            </ol>
+        </nav>
+        <section id="LikeSection">
+            <div class="LikeItems cartItems">
+                <h3 class="text-center" translate>Likes Items</h3>
+                <ul class='items list-unstyled' *ngIf="product.length > 0 ; else GG ">
+                    <li class="d-flex py-4" *ngFor="let item of product;let i = index">
+                        <div class="itemImgName flex-grow-1 d-flex">
+                            <img class="img-fluid" src="../../../../assets/imgs/TopProduct/{{item.product.image}}"
+                                alt="">
+                            <h5 class="mx-2">{{item.product.title |translate}}</h5>
+                        </div>
+                        <div class="price">
+                            <span class="mx-2"> {{item.product.price}} </span>
+                        </div>
+                        <div class="Add-Delete">
+                            <a class="mx-2" (click)='addToCart(item)'> <i class="fas fa-shopping-bag"></i> </a>
+                            <a class="mx-2" (click)='DeleteCart(i)'><i class="fas fa-trash-alt"></i></a>
+                        </div>
+                    </li>
+
+                </ul>
+                <ng-template #GG>
+                    <h4 class="text-center" translate>You have no items in your wishslist.</h4>
+                </ng-template>
+                <a routerLink='' class="btn  d-block continueShopping Pathes" translate> <i class="fas fa-angle-left"
+                        [ngClass]="{'fa-angle-left':translate.currentLang == 'en' ,'fa-angle-right':translate.currentLang == 'ar'}"></i>
+                    Continue
+                    Shopping</a>
+
+            </div>
+        </section>
+    </div>
+</div>

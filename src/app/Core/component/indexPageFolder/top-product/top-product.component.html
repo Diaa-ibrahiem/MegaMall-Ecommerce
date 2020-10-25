@@ -1,0 +1,27 @@
+<!-- Top product section  -->
+<section id="topProduct" class="my-4 py-4">
+    <h3 translate>Top product</h3>
+    <div class="row">
+        <div class="col-sm-12 col-md-6 col-lg-3" *ngFor="let item of ProdArray;let i = index">
+            <div class="topProd-item">
+                <div class="item-img">
+                    <img class="img-fluid" src="../../../../../assets/imgs/TopProduct/{{item.image}}" alt="">
+                </div>
+                <div class="item-content">
+                    <div class="item-name">
+                        <span> {{item.title | translate}} </span>
+                    </div>
+                    <div class="addtocardLike align-items-center d-flex">
+                        <span class="flex-grow-1"> {{item.price | currency}} </span>
+                        <a (click)='SendProductDetails(item)' routerLink='prodDetails' class="d-inline-block "> <i
+                                class="far fa-eye"></i></a>
+                        <a (click)='addToLike(item)' class="d-inline-block mx-1"> <i class="fas fa-heart"></i></a>
+                        <a (click)='addToCart(item)' class="d-inline-block"> <i class="fas fa-shopping-bag"></i> </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+<!-- Top product section  -->

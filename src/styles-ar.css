@@ -1,0 +1,154 @@
+@import "./assets/fonts/_fonts.scss";
+body {
+  text-align: right;
+  font-family: "JF Flat" !important;
+}
+/* navbar Edit  */
+#side-menu {
+  margin-right: 0 !important;
+  margin-left: 10px;
+}
+.navbar-brand {
+  margin: 0;
+}
+.navbar-brand svg.svg-inline--fa.fa-stream.fa-w-16 {
+  display: inline-block;
+  margin-left: 5px;
+}
+.navbar-nav {
+  padding-right: 30px;
+}
+.nav-link:not(:last-child)::after {
+  content: "";
+  width: 1px;
+  height: 11px;
+  border: 1px solid #5f5f5f;
+  position: absolute;
+  top: 5px;
+  left: 0;
+}
+.nav-link:not(:last-child)::after {
+  visibility: hidden;
+}
+.nav-link:not(:last-of-type)::before {
+  content: "";
+  width: 1px;
+  height: 11px;
+  border: 1px solid #5f5f5f;
+  position: absolute;
+  top: 5px;
+  right: 100%;
+}
+.nav-link:last-of-type {
+  margin-left: 20px;
+}
+
+/* sideMenu  */
+#sideMenu {
+  padding-right: 0;
+}
+#sideMenu li {
+  padding-left: 0;
+  padding-right: 20px;
+}
+
+/* bestseller  */
+#bestSeller h3:after {
+  content: "";
+  position: absolute;
+  width: 103px;
+  height: 2px;
+  color: #fc381a;
+  top: 30px;
+  right: 0;
+  border-bottom: 3px solid;
+}
+.bestSeller-item img {
+  margin-right: 0;
+  margin-left: 10px;
+}
+
+/* properties  */
+.property-item:not(:last-child) {
+  margin-right: 0;
+}
+.property-item {
+  align-items: center;
+}
+.property-item img {
+  margin-right: 0;
+  margin-left: 20px;
+}
+
+#topProduct h3:after,
+#OnSale h3:after,
+#blog h3:after {
+  content: "";
+  position: absolute;
+  width: 156px;
+  height: 2px;
+  color: #fc381a;
+  top: 36px;
+  right: 0px;
+  border-bottom: 3px solid;
+}
+
+/* footer  */
+.second-footer,
+.first-footer,
+.third-footer {
+  border: 0;
+  border-left: 1px solid #eee;
+}
+.first-footer {
+  padding-left: 15px;
+}
+footer ul {
+  padding: 0;
+}
+
+.first-footer ul li {
+  margin-right: 0;
+  margin-left: 10px;
+}
+.Contact-US i,
+.Contact-US svg:not(:root).svg-inline--fa {
+  margin-right: 0px;
+  margin-left: 10px;
+}
+.payment-method i,
+.payment-method svg:not(:root).svg-inline--fa {
+  margin-right: 0;
+  margin-left: 15px;
+}
+
+/* About US page  */
+
+.chaing {
+  position: absolute;
+  left: -70px;
+  right: unset;
+  top: 32px;
+}
+/* Terms page  */
+#TermsContent {
+  text-align: right;
+}
+/* }خىفشؤف عس حشلث  */
+.address img {
+  margin-right: 0;
+  margin-left: 26px;
+}
+/* Log in page  */
+.Signcontent > ul {
+  padding-right: 0;
+}
+.Signcontent > ul li {
+  margin-right: 0;
+  margin-left: 10px;
+}
+
+/* cart Page  */
+.cartItems .items {
+  padding: 0;
+}

@@ -1,0 +1,31 @@
+#productView {
+  width: 80%;
+  margin: 0 auto;
+  color: #3b424e;
+}
+#productView img {
+  width: 350px;
+  margin: 0 auto;
+  display: block;
+}
+.productDetails h4 {
+  font-weight: bold;
+  margin: 10px auto;
+}
+.productDetails h4:first-of-type {
+  font-size: 50px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.productDetails span {
+  font-weight: bold;
+  margin: 10px 0;
+  display: block;
+}
+.productDetails p {
+  font-size: 14px;
+  line-height: 1.5;
+  letter-spacing: 1px;
+  margin: 23px 0;
+}

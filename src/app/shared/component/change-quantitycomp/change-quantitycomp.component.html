@@ -1,0 +1,7 @@
+<div id="changeQuantity" class="d-flex" value=[]>
+    <input type="number" class="form-control" [ngModel]='Quantity' (ngModelChange)='QuantityChange.emit($event)'>
+    <div class="change d-flex flex-column">
+        <div><button class="form-control" (click)='Plus()'>+</button></div>
+        <div><button class="form-control" (click)='Minus()'>-</button></div>
+    </div>
+</div>

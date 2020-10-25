@@ -1,0 +1,38 @@
+<div class="row flex-column mt-5  Signcontent" id="logincontent">
+    <h2 translate>Sign In to Your Account</h2>
+    <span translate>Sign up using social networks</span>
+    <ul class="list-unstyled my-4 ">
+        <li class="facebook"> <a href=""> <i class=" fab fa-facebook-f"></i> </a> </li>
+        <li class="twitter"> <a href=""> <i class="fab fa-twitter"></i> </a> </li>
+        <li class="linkedin"> <a href=""> <i class="fab fa-linkedin-in"></i> </a> </li>
+    </ul>
+    <span id="OR" translate>OR</span>
+    <form method="post" class="form-group" id="loginForm" [formGroup]='LoginForm' (ngSubmit)='onSubmit()'>
+
+        <input type="email" class="form-control" placeholder="{{'Email'|translate}}" formControlName='Email'>
+        <ng-container *ngIf="Email.touched&& Email.dirty&&Email.invalid">
+            <span class="bg-danger text-white  validation-invalid" *ngIf="Email.errors.required" translate>Please These
+                Requird Filed</span>
+            <span class="bg-danger text-white validation-invalid" *ngIf="Email.errors.email" translate>Please Enter a
+                valid Email</span>
+            <span class="bg-danger text-white validation-invalid" *ngIf="Email.errors.pattern" translate>Please Enter a
+                valid Pattern</span>
+        </ng-container>
+        <ng-container *ngIf="Email.touched&& Email.dirty&&Email.valid">
+            <span class="bg-success text-white  validation-invalid" translate>All is Okey</span>
+        </ng-container>
+        <input type="password" class="form-control" placeholder="{{'Password'|translate}}" formControlName='Password'>
+        <ng-container *ngIf="Password.touched&& Password.dirty&&Password.invalid">
+            <span class="bg-danger text-white  validation-invalid" *ngIf="Password.errors.required" translate>Please
+                These Requird Filed</span>
+            <span class="bg-danger text-white  validation-invalid" *ngIf="Password.errors.invalidPattern"
+                translate>Wrong Pattern, Password should contain at least 8 chars,1 uppercase ,1 lowercase, 1
+                number</span>
+        </ng-container>
+        <ng-container *ngIf="Password.touched&& Password.dirty&&Password.valid">
+            <span class="bg-success text-white  validation-invalid" translate>All is Okey</span>
+        </ng-container>
+        <a class="d-block" routerLink='/signUp' translate>Create An Account?</a>
+        <button type="submit" class="form-control" translate>LogIn</button>
+    </form>
+</div>

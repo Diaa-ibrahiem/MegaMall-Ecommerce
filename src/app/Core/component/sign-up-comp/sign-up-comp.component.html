@@ -1,0 +1,86 @@
+<div class="row flex-column mt-5 py-5 Signcontent">
+    <h2 translate>Create New Account</h2>
+    <span translate>Sign up using social networks</span>
+    <ul class="list-unstyled my-4 ">
+        <li class="facebook"> <a href=""> <i class=" fab fa-facebook-f"></i> </a> </li>
+        <li class="twitter"> <a href=""> <i class="fab fa-twitter"></i> </a> </li>
+        <li class="linkedin"> <a href=""> <i class="fab fa-linkedin-in"></i> </a> </li>
+    </ul>
+    <span id="OR" translate>OR</span>
+
+    <form method="post" action="" class="form-group py-4" [formGroup]='SignUpForm' (ngSubmit)='onSubmit()'>
+        <input type="text" class="form-control" placeholder="{{'First name'|translate}}" formControlName='firstName'>
+        <ng-container *ngIf="firstName.touched&&firstName.invalid&&firstName.dirty">
+            <span class="bg-danger text-white  validation-invalid" *ngIf="firstName.errors.NameContaineNumber"
+                translate>Fname can't contain anumber</span>
+            <span class="bg-danger text-white  validation-invalid" *ngIf="firstName.errors.required" translate>Fname is
+                required</span>
+            <span class="bg-danger text-white  validation-invalid" *ngIf="firstName.errors.minlength" translate>Fname is
+                minlength is 3</span>
+            <span class="bg-danger text-white  validation-invalid" *ngIf="firstName.errors.maxlength" translate>Fname is
+                maxLength is 20</span>
+        </ng-container>
+        <ng-container *ngIf="firstName.touched&&firstName.valid&&firstName.dirty">
+            <span class="bg-success text-white  validation-invalid" translate>All is Okey</span>
+        </ng-container>
+        <input type="text" class="form-control" placeholder="{{'Last name'|translate}}" formControlName='lastName'>
+        <ng-container *ngIf="lastName.touched&&lastName.invalid&&lastName.dirty">
+            <span class="bg-danger text-white  validation-invalid" *ngIf="lastName.errors.NameContaineNumber"
+                translate>lastName can't contain anumber</span>
+            <span class="bg-danger text-white  validation-invalid" *ngIf="lastName.errors.required" translate>Lastname
+                required</span>
+            <span class="bg-danger text-white  validation-invalid" *ngIf="lastName.errors.minlength" translate>Lastname
+                is minlength is 3</span>
+            <span class="bg-danger text-white  validation-invalid" *ngIf="lastName.errors.maxlength" translate>lastName
+                is maxLength is 20</span>
+        </ng-container>
+        <ng-container *ngIf="lastName.touched&&lastName.valid&&lastName.dirty">
+            <span class="bg-success text-white  validation-invalid" translate>All is Okey</span>
+        </ng-container>
+        <input type="email" class="form-control" placeholder="{{'Email'|translate}}" formControlName='email'>
+        <ng-container *ngIf="email.touched&&email.invalid&&email.dirty">
+            <span class="bg-danger text-white  validation-invalid" *ngIf="email.errors.required" translate>Email is
+                required</span>
+            <span class="bg-danger text-white  validation-invalid" *ngIf="email.errors.email" translate>enter valid
+                Email</span>
+            <span class="bg-danger text-white  validation-invalid" *ngIf="email.errors.pattern" translate>Wrong
+                Pattern</span>
+        </ng-container>
+        <ng-container *ngIf="email.touched&&email.valid&&email.dirty">
+            <span class="bg-success text-white  validation-invalid" translate>All is Okey</span>
+        </ng-container>
+        <input type="text" class="form-control" placeholder="{{'Country'| translate}}" formControlName='country'>
+        <input type="password" class="form-control" placeholder="{{'Password'| translate}}" formControlName='password'>
+        <ng-container *ngIf="password.touched&&password.invalid&&password.dirty">
+            <span class="bg-danger text-white  validation-invalid" *ngIf="password.errors.required" translate>PassWord
+                is required</span>
+            <span class="bg-danger text-white  validation-invalid" *ngIf="password.errors.invalidPattern"
+                translate>Wrong Pattern, Password should contain at least 8 chars,1 uppercase ,1 lowercase, 1 number
+            </span>
+        </ng-container>
+        <ng-container *ngIf="password.touched&&password.valid&&password.dirty">
+            <span class="bg-success text-white  validation-invalid" translate>All is Okey</span>
+        </ng-container>
+        <input type="password" class="form-control" placeholder="{{'Confirm Password'|translate}}"
+            formControlName='ConfirmPassword'>
+        <ng-container *ngIf="ConfirmPassword.touched&&ConfirmPassword.invalid&&ConfirmPassword.dirty">
+            <span class="bg-danger text-white  validation-invalid" *ngIf="ConfirmPassword.errors.required"
+                translate>ConfirmPassword is required</span>
+            <span class="bg-danger text-white  validation-invalid" *ngIf="ConfirmPassword.errors.notSamePassword"
+                translate>notSamePassword</span>
+        </ng-container>
+        <ng-container *ngIf="ConfirmPassword.touched&&ConfirmPassword.valid&&ConfirmPassword.dirty">
+            <span class="bg-success text-white  validation-invalid" translate>All is Okey</span>
+        </ng-container>
+        <div class="form-check">
+            <input id="my-input" class="form-check-input" formControlName='checkBox' type="checkbox" name=""
+                value="true">
+            <label for="my-input" class="form-check-label" translate>I have read the terms</label>
+            <ng-container *ngIf="checkBox.touched&&checkBox.invalid&&checkBox.dirty">
+                <span class="bg-danger text-white  validation-invalid" *ngIf="checkBox.errors.required"
+                    translate>checkBox is required</span>
+            </ng-container>
+        </div>
+        <button type="submit" class="form-control" translate>SignUp</button>
+    </form>
+</div>
